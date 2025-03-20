@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Cabinet de Médecine Esthétique du Dr.Nadia Berrada</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -35,31 +34,9 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons i {
-            font-size: 24px;
-            color: #000;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons i:hover {
-            color: #E91E63;
-        }
-
         header .logo img {
-            height: 100px;  /* Augmenter la taille du logo */
-            width: auto;    /* Largeur automatique pour conserver les proportions */
+            height: 80px; /* Ajusté pour la responsivité */
+            width: auto;
         }
 
         nav ul {
@@ -83,6 +60,48 @@
             color: #E91E63;
         }
 
+        /* Menu burger pour mobile */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Positionné à droite */
+    top: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        position: relative;
+    }
+    nav {
+        width: 100%;
+        text-align: right; /* Aligne le menu à droite */
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0; /* Aligne le menu déroulant à droite */
+        width: 60%; /* Ajuste la largeur */
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    nav ul.active {
+        display: flex;
+    }
+    nav ul li {
+        text-align: center;
+        margin: 15px 0;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -92,6 +111,8 @@
             align-items: center;
             position: relative;
             color: white;
+            text-align: center;
+            padding: 20px;
         }
 
         .hero .overlay {
@@ -101,20 +122,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
         }
 
         .hero h2 {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 600;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 25px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .btn {
@@ -130,40 +148,78 @@
         .btn:hover {
             background-color: #C2185B;
         }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        .about p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="image.png" alt="Logo du Dr. Nadia Berrada" />
-                </a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="rendezvous.html">Rendez-vous</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/drnadiaberrada" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://web.facebook.com/profile.php?id=100090470531708" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@drberradanadia" target="_blank"><i class="fab fa-tiktok"></i></a>
-            </div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="image.png" alt="Logo du Dr. Nadia Berrada" />
+            </a>
         </div>
+        <div class="menu-toggle">☰</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="rendezvous.html">Rendez-vous</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero">
         <div class="overlay">
             <div class="hero-content">
                 <h2>Bienvenue au Cabinet du Dr.Nadia Berrada</h2>
-                <p>Expertise et soins personnalisés pour révéler votre beauté naturelle dans un cadre serein et moderne.</p>
+                <p>Expertise et soins personnalisés pour révéler votre beauté naturelle.</p>
                 <a href="services.html" class="btn">Découvrez nos soins</a>
             </div>
         </div>
     </section>
+
+    <section class="about">
+        <h2>Pourquoi choisir le Dr.Nadia Berrada ?</h2>
+        <p>Le Dr. Nadia Berrada met son expertise et son expérience à votre service.</p>
+        <a href="services.html" class="btn">Voir nos services</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cabinet du Dr.Nadia Berrada - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
