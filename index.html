@@ -35,8 +35,8 @@
         }
 
         header .logo img {
-            height: 100px;  /* Augmenter la taille du logo */
-            width: auto;    /* Largeur automatique pour conserver les proportions */
+            height: 80px; /* Ajusté pour la responsivité */
+            width: auto;
         }
 
         nav ul {
@@ -60,6 +60,39 @@
             color: #E91E63;
         }
 
+        /* Menu burger pour mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                text-align: center;
+                margin: 15px 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -69,6 +102,8 @@
             align-items: center;
             position: relative;
             color: white;
+            text-align: center;
+            padding: 20px;
         }
 
         .hero .overlay {
@@ -78,20 +113,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
         }
 
         .hero h2 {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 600;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 25px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .btn {
@@ -116,13 +148,12 @@
         }
 
         .about h2 {
-            font-size: 36px;
+            font-size: 32px;
             color: #333;
-            margin-bottom: 15px;
         }
 
         .about p {
-            font-size: 18px;
+            font-size: 16px;
             color: #666;
             margin-bottom: 30px;
             line-height: 1.6;
@@ -134,8 +165,6 @@
             padding: 20px;
             background-color: #333;
             color: white;
-            position: relative;
-            bottom: 0;
             width: 100%;
         }
     </style>
@@ -143,12 +172,11 @@
 <body>
     <header>
         <div class="logo">
-            <!-- Replace 'logo.png' with the logo file -->
             <a href="index.html">
                 <img src="image.png" alt="Logo du Dr. Nadia Berrada" />
             </a>
-            
         </div>
+        <div class="menu-toggle">☰</div>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Accueil</a></li>
@@ -163,22 +191,26 @@
         <div class="overlay">
             <div class="hero-content">
                 <h2>Bienvenue au Cabinet du Dr.Nadia Berrada</h2>
-                <p>Expertise et soins personnalisés pour révéler votre beauté naturelle dans un cadre serein et moderne.</p>
+                <p>Expertise et soins personnalisés pour révéler votre beauté naturelle.</p>
                 <a href="services.html" class="btn">Découvrez nos soins</a>
             </div>
         </div>
     </section>
 
     <section class="about">
-        <div class="container">
-            <h2>Pourquoi choisir le Dr.Nadia Berrada ?</h2>
-            <p>Le Dr. Nadia Berrada met son expertise et son expérience à votre service, avec des soins de médecine esthétique sur-mesure, alliant technologies avancées et approche humaine. Vous êtes entre de bonnes mains pour redonner éclat et harmonie à votre peau et votre corps.</p>
-            <a href="services.html" class="btn">Voir nos services</a>
-        </div>
+        <h2>Pourquoi choisir le Dr.Nadia Berrada ?</h2>
+        <p>Le Dr. Nadia Berrada met son expertise et son expérience à votre service.</p>
+        <a href="services.html" class="btn">Voir nos services</a>
     </section>
 
     <footer>
         <p>&copy; 2025 Cabinet du Dr.Nadia Berrada - Tous droits réservés</p>
     </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
