@@ -40,65 +40,77 @@
             height: 80px;
             width: auto;
         }
-/* Menu burger pour mobile */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    position: absolute;
-    right: 20px; /* Positionné à droite */
-    top: 20px;
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-        position: relative;
-    }
-    nav {
-        width: 100%;
-        text-align: right; /* Aligne le menu à droite */
-    }
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0; /* Aligne le menu déroulant à droite */
-        width: 60%; /* Ajuste la largeur */
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    nav ul.active {
-        display: flex;
-    }
-    nav ul li {
-        text-align: center;
-        margin: 15px 0;
-    }
-    .menu-toggle {
-        display: block;
-    }
-}
-        nav ul {
-            list-style: none;
-            display: flex;
+ /* Menu burger pour mobile */
+ .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background: none;
+            border: none;
+            color: #333;
+            transition: transform 0.3s ease-in-out;
         }
 
-        nav ul li {
-            margin-left: 30px;
+        .menu-toggle.active {
+            transform: rotate(90deg);
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #555555;
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                position: fixed;
+                width: 100%;
+                background: white;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-        nav ul li a:hover, nav ul li a.active {
-            color: #E91E63;
+            nav {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 250px;
+                background: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            nav.active {
+                transform: translateX(0);
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                color: #333;
+                font-weight: bold;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            nav ul li a:hover {
+                color: #E91E63;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         /* Hero Section */
@@ -441,6 +453,12 @@
     <footer>
         <p>&copy; 2025 Cabinet de Médecine Esthétique du Dr. Nadia Berrada. Tous droits réservés. <a href="contact.html">Contactez-nous</a></p>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.querySelector("nav").classList.toggle("active");
+            document.querySelector(".menu-toggle").classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>
