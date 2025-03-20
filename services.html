@@ -4,163 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Services - Cabinet de Médecine Esthétique du Dr. Nadia Berrada</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: #f4f4f4;
-            color: #db108d;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(236, 6, 159, 0.822);
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #555555;
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            color: #E91E63;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background: white;
-                width: 100%;
-                text-align: center;
-                box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    <<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Services - Médecine Esthétique</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
             }
-
-            nav ul.active {
+    
+            body {
+                background-color: #f4f4f4;
+                color: #db108d;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+    
+            /* Header */
+            header {
+                background-color: #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                box-shadow: 0 4px 15px rgba(236, 6, 159, 0.822);
+            }
+    
+            header .logo img {
+                height: 80px;
+                width: auto;
+            }
+    
+            nav {
                 display: flex;
             }
-
+    
+            nav ul {
+                list-style: none;
+                display: flex;
+            }
+    
             nav ul li {
-                margin: 10px 0;
+                margin-left: 30px;
             }
-
+    
+            nav ul li a {
+                text-decoration: none;
+                color: #555555;
+                font-weight: 600;
+                font-size: 16px;
+                transition: color 0.3s ease;
+            }
+    
+            nav ul li a:hover, nav ul li a.active {
+                color: #E91E63;
+            }
+    
+            /* Menu burger pour mobile */
             .menu-toggle {
-                display: block;
+                display: none;
+                font-size: 30px;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+                background: none;
+                border: none;
+                color: #333;
+                transition: transform 0.3s ease-in-out;
             }
-        }
-
-        .services-section {
-            padding: 60px 20px;
-            background-color: #fff;
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        .services-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            justify-items: center;
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 350px;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .card h3 {
-            font-size: 22px;
-            color: #E91E63;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #E91E63;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 14px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #C2185B;
-        }
-    </style>
+    
+            .menu-toggle.active {
+                transform: rotate(90deg);
+            }
+    
+            @media (max-width: 768px) {
+                header {
+                    padding: 15px 20px;
+                    position: fixed;
+                    width: 100%;
+                    background: white;
+                    z-index: 1000;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+    
+                nav {
+                    position: absolute;
+                    top: 70px;
+                    right: 0;
+                    width: 250px;
+                    background: white;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease-in-out;
+                    display: flex;
+                    flex-direction: column;
+                }
+    
+                nav.active {
+                    transform: translateX(0);
+                }
+    
+                nav ul {
+                    flex-direction: column;
+                    padding: 20px;
+                }
+    
+                nav ul li {
+                    margin: 15px 0;
+                    text-align: center;
+                }
+    
+                .menu-toggle {
+                    display: block;
+                }
+            }
+    
+            /* Hero Section */
+            .services-hero {
+                height: 75vh;
+                background: url('https://chirurgie-plastique-angers.fr/wp-content/uploads/2024/09/Banniere-site-chirurgie-esthetique.webp') no-repeat center center/cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: rgb(236, 38, 203);
+                text-align: center;
+                position: relative;
+                filter: brightness(70%);
+            }
+    
+            .services-hero h1 {
+                font-size: 65px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+                text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            }
+    
+            .services-section {
+                padding: 80px 20px;
+                background-color: #fff;
+                text-align: center;
+            }
+    
+            .services-section h2 {
+                font-size: 45px;
+                color: #333;
+                font-weight: 600;
+                margin-bottom: 50px;
+            }
+    
+            /* Footer */
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 40px 20px;
+                margin-top: 40px;
+            }
+        </style>
 </head>
 <body>
+
     <header>
         <div class="logo">
             <a href="index.html">
@@ -340,9 +360,11 @@
 </div>
 </SECTion>
 <script>
-    document.querySelector(".menu-toggle").addEventListener("click", function() {
-        document.querySelector("nav ul").classList.toggle("active");
-    });
+    function toggleMenu() {
+        document.querySelector("nav").classList.toggle("active");
+        document.querySelector(".menu-toggle").classList.toggle("active");
+    }
 </script>
+
     </body>
 </html>
