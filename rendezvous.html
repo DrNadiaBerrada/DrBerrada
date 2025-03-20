@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prise de Rendez-vous - Médecine Esthétique</title>
+    <meta name="referrer" content="no-referrer">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("xdceAmxJUwzFkgGta"); // Remplacez par votre User ID EmailJS
+        })();
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #E91E63;
+        }
+
+        .form-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            margin-top: 100px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #E91E63;
+            outline: none;
+            box-shadow: 0 0 5px rgba(233, 30, 99, 0.4);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #E91E63;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #d81b60;
+        }
+
+        #confirmation-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .form-section {
+                width: 90%;
+                padding: 20px;
+                margin-top: 50px;
+            }
+
+            .form-group {
+                text-align: left;
+            }
+
+            .submit-btn {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-section {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .submit-btn {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+
+        /* Menu Hamburger */
+        .menu-hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .nav-mobile {
+            display: none;
+            text-align: center;
+        }
+
+        .nav-mobile.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="image.png" alt="Logo du Dr. Nadia Berrada" />
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="rendezvous.html">Rendez-vous</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-hamburger" onclick="toggleMenu()">
+            <span>☰</span>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="rendezvous.html">Rendez-vous</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="form-section">
+        <h2>Prendre un Rendez-vous</h2>
+        <form id="appointment-form">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" name="Nom" id="nom" placeholder="Votre Nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" name="Téléphone" id="telephone" placeholder="Votre Téléphone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jour">Date</label>
+                <input type="date" name="Date" id="jour" required>
+            </div>
+
+            <div class="form-group">
+                <label for="heure">Heure</label>
+                <select name="Heure" id="heure" required></select>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service</label>
+                <select name="Service" id="service" required>
+                    <option value="">Sélectionnez un service</option>
+                    <option>PRP</option>
+                    <option>Mésothérapie</option>
+                    <option>Microneedling</option>
+                    <option>Laser Épilatoire</option>
+                    <option>Peeling</option>
+                    <option>Hydrafacial</option>
+                    <option>Filler</option>
+                    <option>Botox</option>
+                    <option>HIFU</option>
+                    <option>Laser CO2</option>
+                    <option>Radiofréquence</option>
+                    <option>Skin Booster</option>
+                    <option>Traitement de l'Acné</option>
+                    <option>Exosome</option>
+                    <option>Mésothérapie des Cheveux</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+        <p id="confirmation-message">Votre rendez-vous a été envoyé avec succès !</p>
+    </section>
+
+    <script>
+        document.getElementById("jour").addEventListener("change", function() {
+            const date = new Date(this.value);
+            const day = date.getDay();
+            const heureSelect = document.getElementById("heure");
+            heureSelect.innerHTML = "";
+
+            let horaires = [];
+            if (day >= 1 && day <= 5) {
+                for (let h = 9; h <= 18; h++) {
+                    horaires.push(`${h}:00`, `${h}:30`);
+                }
+            } else if (day === 6) {
+                for (let h = 9; h <= 13; h++) {
+                    horaires.push(`${h}:00`, `${h}:30`);
+                }
+            } else {
+                alert("Aucun rendez-vous le dimanche !");
+                return;
+            }
+
+            horaires.forEach(heure => {
+                const option = document.createElement("option");
+                option.value = heure;
+                option.textContent = heure;
+                heureSelect.appendChild(option);
+            });
+        });
+
+        document.getElementById("appointment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            emailjs.sendForm("drnadiaberrada", "template_3al6ug8", this)
+                .then(() => {
+                    document.getElementById("confirmation-message").style.display = "block";
+                }, (error) => {
+                    alert("Erreur lors de l'envoi : " + JSON.stringify(error));
+                });
+        });
+
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-mobile');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

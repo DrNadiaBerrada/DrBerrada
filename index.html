@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Cabinet de Médecine Esthétique du Dr.Nadia Berrada</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            height: 100px;  /* Augmenter la taille du logo */
+            width: auto;    /* Largeur automatique pour conserver les proportions */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #E91E63;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('IMG_6404.jpeg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: #E91E63;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #C2185B;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Replace 'logo.png' with the logo file -->
+            <a href="index.html">
+                <img src="image.png" alt="Logo du Dr. Nadia Berrada" />
+            </a>
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="rendezvous.html">Rendez-vous</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="overlay">
+            <div class="hero-content">
+                <h2>Bienvenue au Cabinet du Dr.Nadia Berrada</h2>
+                <p>Expertise et soins personnalisés pour révéler votre beauté naturelle dans un cadre serein et moderne.</p>
+                <a href="services.html" class="btn">Découvrez nos soins</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Pourquoi choisir le Dr.Nadia Berrada ?</h2>
+            <p>Le Dr. Nadia Berrada met son expertise et son expérience à votre service, avec des soins de médecine esthétique sur-mesure, alliant technologies avancées et approche humaine. Vous êtes entre de bonnes mains pour redonner éclat et harmonie à votre peau et votre corps.</p>
+            <a href="services.html" class="btn">Voir nos services</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cabinet du Dr.Nadia Berrada - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

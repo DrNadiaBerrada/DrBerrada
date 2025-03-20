@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Médecine Esthétique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("xdceAmxJUwzFkgGta"); // Remplace par ton USER_ID EmailJS
+        })();
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f4f4f4; color: #333; }
+        header { background-color: rgba(255, 255, 255, 0.9); padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        header .logo img { height: 80px; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { text-decoration: none; color: #555; font-weight: 600; font-size: 16px; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #E91E63; }
+        .contact-section { padding: 80px 20px; text-align: center; background-color: white; border-radius: 10px; width: 60%; margin: auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+        .contact-section h2 { font-size: 40px; margin-bottom: 20px; }
+        .contact-info { display: flex; justify-content: space-between; text-align: left; margin-bottom: 30px; }
+        .info-box { width: 30%; }
+        .info-box i { font-size: 25px; color: #E91E63; margin-bottom: 10px; }
+        .form-group { margin-bottom: 15px; text-align: left; position: relative; }
+        .form-group i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #E91E63; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 40px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; }
+        .submit-btn { width: 100%; padding: 15px; background-color: #E91E63; color: white; font-size: 18px; font-weight: 600; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background-color: #C2185B; }
+        .map-container { margin-top: 40px; }
+        iframe { width: 100%; height: 300px; border-radius: 10px; border: none; }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="image.png" alt="Logo du Dr. Nadia Berrada" />
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="rendezvous.html">Rendez-vous</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <h2>Nous Contacter</h2>
+        <div class="contact-info">
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>139, lotissement Rajaa 2, Soualem</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-phone"></i>
+                <p>+212 6 15 99 66 65 / +212 5 22 96 38 81 </p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-clock"></i>
+                <p>Lundi - Vendredi : 09h - 18h30<br>Samedi : 09h - 14h</p>
+            </div>
+        </div>
+
+        <form id="contact-form">
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="nom" id="nom" placeholder="Nom et Prénom" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-comment"></i>
+                <textarea name="message" id="message" rows="4" placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+        <div class="social-icons">
+            <br><a href="https://www.instagram.com/drnadiaberrada?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=100090470531708&mibextid=PtKPJ9&_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@drberradanadia?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <style>
+            .social-icons i {
+                font-size: 40px; /* Ajuste la taille selon tes préférences */
+                margin: 0 10px;
+                color: #000; /* Tu peux changer la couleur selon ton besoin */
+            }
+        </style>
+
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.9895460725243!2d-7.8546914999999995!3d33.423516899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda883ee3030aa1f%3A0xbb29915b36bee6a1!2sDr%20BERRADA%20NADIA!5e0!3m2!1sfr!2sma!4v1741488980580!5m2!1sfr!2sma" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cabinet de Médecine Esthétique - Tous droits réservés</p>
+    </footer>
+    
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_ca5upbo", "template_4g52t7c", this)
+                .then(() => {
+                    alert("Votre message a été envoyé avec succès !");
+                    document.getElementById("contact-form").reset();
+                })
+                .catch((error) => {
+                    alert("Erreur lors de l'envoi : " + JSON.stringify(error));
+                });
+        });
+    </script>
+</body>
+</html>

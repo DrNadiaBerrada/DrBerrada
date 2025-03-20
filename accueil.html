@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cabinet de médecine esthétique offrant des soins de qualité. Découvrez nos services pour une peau éclatante et un bien-être total.">
+    <title>Cabinet de Médecine Esthétique</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        header {
+            background-color: #3c8c8c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4c542;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #f4c542;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #3c8c8c;
+            color: white;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 50px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #services h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .service-list {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .service {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service h3 {
+            font-size: 1.5em;
+            color: #3c8c8c;
+        }
+
+        .service p {
+            font-size: 1em;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px 20px;
+            background-color: #e1e1e1;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        .contact-form button {
+            background-color: #3c8c8c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #f4c542;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Cabinet Esthétique">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Nos Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">À Propos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="accueil" class="hero">
+        <h1>Bienvenue au Cabinet de Médecine Esthétique</h1>
+        <p>Redécouvrez votre beauté et votre bien-être avec nos soins sur mesure.</p>
+        <a href="#services" class="cta-button">Découvrez nos services</a>
+    </section>
+
+    <section id="services">
+        <h2>Nos Services</h2>
+        <div class="service-list">
+            <article class="service">
+                <h3>Soins Anti-Âge</h3>
+                <p>Rajeunissez votre peau avec nos traitements anti-âge de dernière génération.</p>
+            </article>
+            <article class="service">
+                <h3>Raffermissement</h3>
+                <p>Des solutions efficaces pour retrouver fermeté et tonicité de la peau.</p>
+            </article>
+            <article class="service">
+                <h3>Épilation Laser</h3>
+                <p>Adieu les poils indésirables grâce à notre technologie laser moderne.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-Nous</h2>
+        <form action="#" method="POST" class="contact-form">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cabinet de Médecine Esthétique. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
